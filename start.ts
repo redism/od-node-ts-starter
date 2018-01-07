@@ -55,20 +55,23 @@ Description : ${description.white.bold}
     return
   }
 
-  shell.cd(path.join(__dirname, '..'))
+  shell.cd(path.join(__dirname))
   shell.rm('-rf', 'coverage')
   shell.rm('-rf', '.git')
   shell.rm('-rf', '.idea')
-  shell.rm('-rf', '.src')
-  shell.rm('-rf', '.test')
-  shell.rm('-rf', '.dist')
+  shell.rm('-rf', 'src')
+  shell.rm('-rf', 'test')
+  shell.rm('-rf', 'dist')
   shell.rm('-rf', 'node_modules')
   shell.rm('yarn.lock')
 
+  shell.mkdir('-p', 'src')
+  shell.mkdir('-p', 'test')
+
   const view = { name, author, description }
-  await render(path.join(__dirname, '../templates/package.json.mustache'), path.join(__dirname, '../package.json'), view)
-  await render(path.join(__dirname, '../templates/index.ts.mustache'), path.join(__dirname, '../src/index.ts'), view)
-  await render(path.join(__dirname, '../templates/index.test.ts.mustache'), path.join(__dirname, '../test/index.test.ts'), view)
+  await render(path.join(__dirname, 'templates/package.json.mustache'), path.join(__dirname, 'package.json'), view)
+  await render(path.join(__dirname, 'templates/index.ts.mustache'), path.join(__dirname, 'src/index.ts'), view)
+  await render(path.join(__dirname, 'templates/index.test.ts.mustache'), path.join(__dirname, 'test/index.test.ts'), view)
 
   shell.rm('-rf', 'templates')
   if (shell.which('yarn')) {
@@ -77,9 +80,10 @@ Description : ${description.white.bold}
     shell.exec('npm i')
   }
 
+  shell.rm('start.ts')
   shell.exec('git init')
   shell.exec('git add .')
-  shell.exec(`git commit -m"Initial setup for ${name}`)
+  shell.exec(`git commit -m"Initial setup for ${name}"`)
   console.log(`Finished`.white.bold)
 }
 
