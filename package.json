@@ -1,5 +1,5 @@
 {
-  "name": "od-node-cloud",
+  "name": "od-node-ts-starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,10 +9,13 @@
     "watch-ts": "tsc -w",
     "test": "jest --forceExit --coverage --verbose test",
     "test:watch": "jest --forceExit --coverage --verbose --watch test",
-    "tslint": "tslint -c tslint.json -p tsconfig.json"
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "publish": "npm run lint && npm run test && npm run build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "odcode"
+  ],
+  "author": "jeff.oh@odcode.com",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "22.0.1",
