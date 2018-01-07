@@ -1,8 +1,9 @@
 {
   "name": "od-node-ts-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "npm run build-ts && npm run tslint",
     "build-ts": "tsc",
@@ -10,7 +11,7 @@
     "test": "jest --forceExit --coverage --verbose test",
     "test:watch": "jest --forceExit --coverage --verbose --watch test",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "publish": "npm run lint && npm run test && npm run build"
+    "prepublishOnly": "npm run tslint && npm run test && npm run build"
   },
   "keywords": [
     "odcode"

@@ -1,4 +1,4 @@
-import { adder, sub } from '../src/server'
+import { adder, sub } from '../src/index'
 
 describe('Simple test', () => {
   it('adder', () => {
