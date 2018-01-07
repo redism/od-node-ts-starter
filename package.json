@@ -1,17 +1,18 @@
 {
   "name": "od-node-ts-starter",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.5",
+  "description": "ODCode Typescript boilerplate for node.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "npm run build-ts && npm run tslint",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
     "test": "jest --forceExit --coverage --verbose test",
     "test:watch": "jest --forceExit --coverage --verbose --watch test",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "prepublishOnly": "npm run tslint && npm run test && npm run build"
+    "prepublish": "npm run clean && npm run tslint && npm run test && npm run build"
   },
   "keywords": [
     "odcode"
