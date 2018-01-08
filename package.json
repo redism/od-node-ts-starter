@@ -9,7 +9,7 @@
     "clean": "rm -rf dist",
     "build": "npm run build-ts && npm run tslint",
     "build-ts": "tsc",
-    "watch-ts": "tsc -w",
+    "build:watch": "tsc -w",
     "test": "jest --forceExit --coverage --verbose test",
     "test:watch": "jest --forceExit --coverage --verbose --watch test",
     "test:debug": "node --inspect=55555 ./node_modules/.bin/jest --forceExit --verbose --no-cache --watch test",
