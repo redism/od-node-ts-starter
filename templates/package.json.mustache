@@ -10,8 +10,8 @@
     "build": "npm run build-ts && npm run tslint",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "test": "jest --forceExit --coverage --verbose test",
-    "test:watch": "jest --forceExit --coverage --verbose --watch test",
+    "test": "jest --forceExit --coverage --verbose test/*",
+    "test:watch": "jest --forceExit --coverage --verbose --watch test/*",
     "test:debug": "node --inspect=55555 ./node_modules/.bin/jest --forceExit --verbose --no-cache --watch test",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prepublish": "npm run clean && npm run tslint && npm run test && npm run build"
