@@ -27,6 +27,7 @@
     "@types/mustache": "0.8.30",
     "@types/shelljs": "0.7.7",
     "colors": "1.1.2",
+    "eslint": "4.15.0",
     "jest": "22.0.4",
     "mustache": "2.3.0",
     "shell-helper": "1.0.2",
